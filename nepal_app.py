@@ -103,7 +103,7 @@ def bulk_upload_page():
 
     st.markdown("Upload a CSV with the same feature columns used during training.")
     uploaded = st.file_uploader("Choose CSV file", type="csv", accept_multiple_files=False)
-    threshold = st.slider("Prediction threshold (probability -> positive)", 0.3, 0.4, 0.5, 0.6)
+    threshold = st.slider("Prediction threshold (probability -> positive)", 0.3, 0.4)
 
     def preprocess_input(df: pd.DataFrame):
         missing = [c for c in (numeric_cols + cat_cols) if c not in df.columns]

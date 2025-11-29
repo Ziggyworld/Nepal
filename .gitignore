@@ -1,0 +1,10 @@
+venv/
+data/
+.streamlit/
+nepal_artifacts.pkl
+*.pkl
+*.vscode/
+*.pytest_cache/
+*.db
+*.sqlite
+nepal_eq.db

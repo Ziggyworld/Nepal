@@ -20,7 +20,7 @@ def main_page():
 
     # Input fields for the features
     st.header("Input Features")
-    st.subheader('Please note: The Model can accurately predict 70% of the damage grade of buildings in Nepal only.')
+    st.subheader('Please note: The Model can accurately predict 90% of the severe damage  of buildings in Nepal only.')
 
     age_building = st.number_input("Age of Building (0-999)", min_value=0, max_value=999)
     foundation_type = st.selectbox("Foundation Type", options=['Mud mortar-Stone/Brick', 'Cement-Stone/Brick', 'RC', 'Other', 'Bamboo/Timber'])

@@ -20,7 +20,7 @@ def main_page():
 
     # Input fields for the features
     st.header("Input Features")
-    st.subheader('Please note: The Model can accurately predict 90% of the severe damage  of buildings in Nepal only.')
+    st.subheader('Please note: The Model can accurately predict 70% of the severe damage  of buildings in Nepal only.')
 
     age_building = st.number_input("Age of Building (0-999)", min_value=0, max_value=999)
     foundation_type = st.selectbox("Foundation Type", options=['Mud mortar-Stone/Brick', 'Cement-Stone/Brick', 'RC', 'Other', 'Bamboo/Timber'])
@@ -99,11 +99,11 @@ def bulk_upload_page():
     cat_cols = artifacts.get("cat_cols", [])
     numeric_cols = artifacts.get("numeric_cols", [])
     feature_columns = artifacts.get("feature_columns", None)
-    THRESHOLD = 0.4 #artifacts.get("threshold")
+    THRESHOLD = 0.6 #artifacts.get("threshold")
 
     st.markdown("Upload a CSV with the same feature columns used during training.")
     uploaded = st.file_uploader("Choose CSV file", type="csv", accept_multiple_files=False)
-    threshold = st.slider("Prediction threshold (probability -> positive)", 0.3, 0.4)
+    threshold = st.slider("Prediction threshold (probability -> positive)", 0.4, 0.6)
 
     def preprocess_input(df: pd.DataFrame):
         missing = [c for c in (numeric_cols + cat_cols) if c not in df.columns]
